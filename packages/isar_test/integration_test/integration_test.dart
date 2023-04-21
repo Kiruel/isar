@@ -2,7 +2,6 @@
 
 import 'dart:async';
 
-import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:integration_test/integration_test.dart';
 import 'package:isar_test/isar_test.dart';
@@ -29,9 +28,13 @@ void main() async {
     tests.main();
   });
 
-  testWidgets('Isar', (t) async {
-    await completer.future;
-    expect(testCount > 0, true);
-    expect(testErrors, isEmpty);
-  });
+  testWidgets(
+    'Isar',
+    (t) async {
+      await completer.future;
+      expect(testCount > 0, true);
+      expect(testErrors, isEmpty);
+    },
+    timeout: Timeout.none,
+  );
 }

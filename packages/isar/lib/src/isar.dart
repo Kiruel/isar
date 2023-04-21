@@ -18,7 +18,7 @@ abstract class Isar {
   }
 
   /// The version of the Isar library.
-  static const version = '3.0.6-dev.0';
+  static const version = '3.1.0';
 
   /// Smallest valid id.
   static const Id minId = isarMinId;
@@ -87,7 +87,7 @@ abstract class Isar {
   /// Open a new Isar instance.
   static Future<Isar> open(
     List<CollectionSchema<dynamic>> schemas, {
-    String? directory,
+    required String directory,
     String name = defaultName,
     int maxSizeMiB = Isar.defaultMaxSizeMiB,
     bool relaxedDurability = true,
@@ -117,7 +117,7 @@ abstract class Isar {
   /// Open a new Isar instance.
   static Isar openSync(
     List<CollectionSchema<dynamic>> schemas, {
-    String? directory,
+    required String directory,
     String name = defaultName,
     int maxSizeMiB = Isar.defaultMaxSizeMiB,
     bool relaxedDurability = true,
